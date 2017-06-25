@@ -13,14 +13,11 @@ function getTopNews () {
   return new Promise(function (resolve, reject) {
     got(url)
       .then((response) => {
-        console.log('yes')
         var parsedRes = JSON.parse(response.body)
         var output = formatOutput(parsedRes)
         resolve(output)
       })
       .catch((error) => {
-        console.log('we had an error')
-        console.log(error)
         reject(error)
       })
   })

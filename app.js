@@ -40,12 +40,12 @@ app.intent('TopNewsIntent', {
 }, function (request, response) {
   return getTopNews()
     .then(function (output) {
-      console.log(response)
       response.say(output)
     })
     .catch(function (error) {
-      console.log(response)
-      response.say(error)
+      console.log(error)
+      var errorGet = 'We failed to get the news, try again.'
+      response.say(errorGet)
     })
 })
 
