@@ -1,9 +1,10 @@
 var Alexa = require('alexa-app')
+var getTopNews = require('./get-top-news.js')
 
-var app = new Alexa.app('app') // eslint-disable-line
+var app = new Alexa.app('hacker-news') // eslint-disable-line
 
 app.launch(function (request, response) {
-  var launchOutput = 'Welcome to Your Skill.  The purpose of this skill is...  To start using the skill, say Alexa, ask ....'
+  var launchOutput = 'Welcome to Hacker Update.  The purpose of this skill is see what the newest titles and descriptions are from Hacker News.  To start using the skill, say Alexa, ask hacker update to tell me the top stories.'
   response.say(launchOutput)
   response.shouldEndSession(false)
 })
@@ -12,7 +13,7 @@ app.intent('AMAZON.HelpIntent', {
   'slots': {},
   'utterances': []
 }, function (request, response) {
-  var helpOutput = 'Welcome to Your Skill.  The purpose of this skill is...  To start using the skill, say Alexa, ask .... What would you like to do?'
+  var helpOutput = 'Welcome to Hacker Update.  The purpose of this skill is see what the newest titles and descriptions are from Hacker News.  To start using the skill, say Alexa, ask hacker update to tell me the top stories. What would you like to do?'
   response.say(helpOutput)
   response.shouldEndSession(false)
 })
@@ -33,12 +34,19 @@ app.intent('AMAZON.CancelIntent', {
   response.say(cancelOutput).send()
 })
 
-app.intent('SampleIntent', {
+app.intent('TopNewsIntent', {
   'slots': {},
-  'utterances': ['to say the skill', 'to tell me the name', 'to recite the time']
+  'utterances': ['to tell me the top stories', 'to say the top articles', 'to give me top stories']
 }, function (request, response) {
-  var output = 'Hi there'
-  response.say(output).send()
+  return getTopNews()
+    .then(function (output) {
+      console.log(response)
+      response.say(output)
+    })
+    .catch(function (error) {
+      console.log(response)
+      response.say(error)
+    })
 })
 
 module.exports = app

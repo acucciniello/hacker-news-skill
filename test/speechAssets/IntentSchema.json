@@ -1,7 +1,7 @@
 {
   "intents": [
     {
-      "intent": "SampleIntent"
+      "intent": "TopNewsIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"

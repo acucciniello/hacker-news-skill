@@ -1,3 +1,3 @@
-SampleIntent to say the skill
-SampleIntent to tell me the name
-SampleIntent to recite the time
+TopNewsIntent to tell me the top stories
+TopNewsIntent to say the top articles
+TopNewsIntent to give me top stories

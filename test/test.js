@@ -41,7 +41,7 @@ it('Launches the skill', function (done) {
       console.log(error)
       done()
     }
-    assert.equal(payload.response.outputSpeech.ssml, '<speak>Welcome to Your Skill. The purpose of this skill is...  To start using the skill, say Alexa, ask ....</speak>')
+    assert.equal(payload.response.outputSpeech.ssml, '<speak>Welcome to Hacker Update. The purpose of this skill is see what the newest titles and descriptions are from Hacker News.  To start using the skill, say Alexa, ask hacker update to tell me the top stories.</speak>')
     assert.equal(payload.response.shouldEndSession, false)
     done()
   })
@@ -53,7 +53,7 @@ it('Launches the Help intent and doesnt end session', function (done) {
       console.log(error)
       done()
     }
-    assert.equal(payload.response.outputSpeech.ssml, '<speak>Welcome to Your Skill. The purpose of this skill is...  To start using the skill, say Alexa, ask .... What would you like to do?</speak>')
+    assert.equal(payload.response.outputSpeech.ssml, '<speak>Welcome to Hacker Update. The purpose of this skill is see what the newest titles and descriptions are from Hacker News.  To start using the skill, say Alexa, ask hacker update to tell me the top stories. What would you like to do?</speak>')
     assert.equal(payload.response.shouldEndSession, false)
     done()
   })
@@ -81,35 +81,34 @@ it('Cancels and Exits Skill upon calling CancelIntent', function (done) {
   })
 })
 
-it('Launches SampleIntent with Utterance', function (done) {
-  alexa.spoken('to say the skill', function (error, response, request) {
+it('Launches TopNewsIntent with Utterance', function (done) {
+  alexa.spoken('to tell me the top stories', function (error, response, request) {
     if (error) {
       console.log(error)
     }
-    assert.equal(request.request.intent.name, 'SampleIntent')
+    assert.equal(request.request.intent.name, 'TopNewsIntent')
   })
-  alexa.spoken('to tell me the name', function (error, response, request) {
+  alexa.spoken('to say the top articles', function (error, response, request) {
     if (error) {
       console.log(error)
     }
-    assert.equal(request.request.intent.name, 'SampleIntent')
+    assert.equal(request.request.intent.name, 'TopNewsIntent')
   })
-  alexa.spoken('to recite the time', function (error, response, request) {
+  alexa.spoken('to give me top stories', function (error, response, request) {
     if (error) {
       console.log(error)
     }
-    assert.equal(request.request.intent.name, 'SampleIntent')
+    assert.equal(request.request.intent.name, 'TopNewsIntent')
   })
   done()
 })
 
-it('Says Hi there with SampleIntent', function (done) {
-  alexa.intended('SampleIntent', null, function (error, payload) {
+it('Says Hi there with TopNewsIntent', function (done) {
+  alexa.intended('TopNewsIntent', null, function (error, payload) {
     if (error) {
       console.log(error)
-      done()
     }
-    assert.equal(payload.response.outputSpeech.ssml, '<speak>Hi there</speak>')
-    done()
+    assert.include(payload.response.outputSpeech.ssml, '<speak>Here are your Articles: 1.')
   })
+  done()
 })
