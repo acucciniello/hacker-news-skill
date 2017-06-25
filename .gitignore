@@ -59,3 +59,6 @@ typings/
 
 # claudia file
 claudia.json
+
+# claudia json vars
+env.json

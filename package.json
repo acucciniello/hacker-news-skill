@@ -8,21 +8,21 @@
   "license": "MIT",
   "scripts": {
     "test": "standard && cd test && mocha test.js",
-    "deploy": "claudia create --region us-east-1 --handler index.handler --profile claudia",
+    "deploy": "claudia create --region us-east-1 --handler index.handler  --set-env-from-json env.json --profile claudia",
     "upload": "claudia update --profile claudia"
   },
   "devDependencies": {
     "bespoken-tools": "^0.9.45",
     "chai": "^4.0.2",
     "claudia": "^2.13.0",
-    "dotenv": "^4.0.0",
-    "got": "^7.0.0",
     "mocha": "^3.4.2",
     "standard": "^10.0.2"
   },
   "dependencies": {
     "alexa-app": "^4.0.1",
-    "promise": "^8.0.0"
+    "promise": "^8.0.0",
+    "got": "^7.0.0",
+    "dotenv": "^4.0.0"
   },
   "standard": {
     "globals": [
@@ -32,5 +32,16 @@
       "afterEach",
       "app"
     ]
-  }
+  },
+  "files": [
+    ".env",
+    "app.js",
+    "index.js",
+    "get-top-news.js",
+    "format-output.js",
+    ".travis.yml",
+    ".npmignore",
+    "yarn.lock",
+    "test"
+  ]
 }
