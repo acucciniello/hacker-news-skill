@@ -1,7 +1,7 @@
 {
-  "name": "hacjer-news-skill",
+  "name": "hacker-news-skill",
   "version": "1.0.0",
-  "description": "An Amazon Alexa Skill that will give you the newest hacker news article titles from YCombinator",
+  "description": "An easy to use Amazon Alexa Skill Boilerplate for fast skill creation",
   "main": "index.js",
   "repository": "https://github.com/acucciniello/hacker-news-skill.git",
   "author": "Antonio Cuccinielello <antonio.cucciniello16@gmail.com>",

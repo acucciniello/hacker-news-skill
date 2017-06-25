@@ -20,6 +20,7 @@ function getTopNews () {
       })
       .catch((error) => {
         console.log('we had an error')
+        console.log(error)
         reject(error)
       })
   })
