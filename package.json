@@ -1,9 +1,9 @@
 {
-  "name": "alexa-skill-boilerplate",
+  "name": "hacjer-news-skill",
   "version": "1.0.0",
-  "description": "An easy to use Amazon Alexa Skill Boilerplate for fast skill creation",
+  "description": "An Amazon Alexa Skill that will give you the newest hacker news article titles from YCombinator",
   "main": "index.js",
-  "repository": "https://github.com/acucciniello/alexa-skill-boilerplate.git",
+  "repository": "https://github.com/acucciniello/hacker-news-skill.git",
   "author": "Antonio Cuccinielello <antonio.cucciniello16@gmail.com>",
   "license": "MIT",
   "scripts": {
