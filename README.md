@@ -2,6 +2,8 @@
 
 An Amazon Alexa Skill that will give you the newest hacker news article titles from Y Combinator
 
+https://acucciniello.github.io/hacker-news-skill/
+
 ## Donate
 
 If you would like to donate to help keep this skill updated and improving please donate here:
@@ -38,6 +40,6 @@ Alexa's Response:
 
 
 
-##License
+## License
 
 MIT
