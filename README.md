@@ -1,5 +1,5 @@
 # hacker-news-skill[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard     )[![Build Status](https://travis-ci.org/acucciniello/hacker-news-skill.svg?branch=master)](https://travis-ci.org/acucciniello/hacker-news-skill)
-===============
+
 An Amazon Alexa Skill that will give you the newest hacker news article titles from Y Combinator
 
 ## Donate
